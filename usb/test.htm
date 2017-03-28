@@ -1,0 +1,16 @@
+<html><head>
+<script>
+function connect() {
+	navigator.usb.requestDevice({ filters: [{ vendorId: 0x1209 }] })
+	.then(device => {
+	  console.log(device.productName);
+	  console.log(device.manufacturerName);
+	})
+	.catch(error => { console.log(error); });
+
+}
+</script>
+
+<body>
+<input id="clickMe" type="button" value="clickme" onclick="connect();" />
+</body></html>
